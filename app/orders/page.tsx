@@ -33,6 +33,29 @@ const STATUS_CONFIG: Record<OrderStatus, { label: string; color: string; emoji: 
   delivered: { label: "Delivered", color: "bg-green-100 text-green-700", emoji: "📦" },
 };
 
+function isStoredOrder(value: unknown): value is StoredOrder {
+  if (!value || typeof value !== "object") return false;
+  const order = value as Partial<StoredOrder>;
+  return (
+    typeof order.id === "string" &&
+    typeof order.date === "string" &&
+    typeof order.total === "number" &&
+    typeof order.delivery_address === "string" &&
+    Array.isArray(order.items) &&
+    order.items.every(
+      (item) =>
+        item &&
+        typeof item === "object" &&
+        typeof item.quantity === "number" &&
+        item.product &&
+        typeof item.product.id === "string" &&
+        typeof item.product.name === "string" &&
+        typeof item.product.price === "number" &&
+        typeof item.product.image_url === "string"
+    )
+  );
+}
+
 export default function OrdersPage() {
   const [orders, setOrders] = useState<StoredOrder[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -41,7 +64,8 @@ export default function OrdersPage() {
     try {
       const raw = localStorage.getItem("zaiqa-orders");
       if (raw) {
-        setOrders(JSON.parse(raw));
+        const parsed: unknown = JSON.parse(raw);
+        setOrders(Array.isArray(parsed) ? parsed.filter(isStoredOrder) : []);
       }
     } catch {
       // localStorage unavailable
