@@ -25,19 +25,19 @@ export default async function HomePage() {
         <div className="absolute inset-0 hero-gradient" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
           <div className="max-w-xl">
-            <p className="text-amber-200 font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="hero-title text-amber-200 font-semibold text-sm uppercase tracking-widest mb-3">
               🌙 Authentic · Halal · Delivered Fresh
             </p>
-            <h1 className="text-white font-bold text-4xl sm:text-5xl leading-tight mb-4">
+            <h1 className="hero-subtitle text-white font-bold text-4xl sm:text-5xl leading-tight mb-4">
               Real Flavors from
               <br />
               <span className="text-amber-200">the Subcontinent</span>
             </h1>
-            <p className="text-white/90 text-lg mb-8">
+            <p className="hero-cta text-white/90 text-lg mb-8">
               From saffron-kissed biryani to smoky seekh kebabs — every dish
               crafted from authentic recipes passed down through generations.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="hero-cta flex flex-wrap gap-3">
               <Link
                 href="/products"
                 className="bg-white text-amber-700 font-bold px-6 py-3 rounded-full hover:bg-amber-50 transition-colors shadow-lg"
@@ -53,7 +53,7 @@ export default async function HomePage() {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-6 mt-10">
+            <div className="hero-stats flex gap-6 mt-10">
               {[
                 { value: "50+", label: "Authentic Dishes" },
                 { value: "4.8★", label: "Avg Rating" },
@@ -89,12 +89,12 @@ export default async function HomePage() {
             View all →
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-3">
+        <div className="stagger-children grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-3">
           {categories.map((cat) => (
             <Link
               key={cat.id}
               href={`/products?category=${cat.slug}`}
-              className="group flex flex-col items-center p-4 bg-white rounded-2xl border border-stone-100 hover:border-amber-300 hover:shadow-md transition-all duration-200"
+              className="category-card animate-fade-in-up group flex flex-col items-center p-4 bg-white rounded-2xl border border-stone-100"
             >
               <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">
                 {cat.emoji}
@@ -126,7 +126,7 @@ export default async function HomePage() {
               See all →
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="stagger-children grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {featured.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

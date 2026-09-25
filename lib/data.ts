@@ -43,7 +43,7 @@ export const CATEGORIES: Category[] = [
     slug: "snacks",
     description: "Crispy appetizers and street food favorites",
     image_url:
-      "https://images.unsplash.com/photo-1601050690117-7a1f3e1e35fe?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=600&q=80&auto=format&fit=crop",
     emoji: "🥟",
   },
   {
@@ -52,7 +52,7 @@ export const CATEGORIES: Category[] = [
     slug: "sweets",
     description: "Traditional mithai and desserts to satisfy your sweet tooth",
     image_url:
-      "https://images.unsplash.com/photo-1605197161470-5e43fb0d4b95?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=600&q=80&auto=format&fit=crop",
     emoji: "🍬",
   },
   {
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
       "Slow-cooked beef dum biryani with caramelized onions, dried plums, and fragrant rice. Rich and indulgent.",
     price: 17.99,
     image_url:
-      "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1603360946369-dc9bb6258aaf?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-1",
     category_name: "Rice & Biryani",
     rating: 4.8,
@@ -211,7 +211,7 @@ export const PRODUCTS: Product[] = [
       "Slow-braised beef shank stew simmered overnight with whole spices. A royal breakfast turned dinner staple.",
     price: 18.99,
     image_url:
-      "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1769681375998-1b231dcbe363?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-3",
     category_name: "Curries",
     rating: 4.9,
@@ -229,7 +229,7 @@ export const PRODUCTS: Product[] = [
       "A beloved slow-cooked stew of wheat, lentils, and tender mutton. Topped with crispy onions and lemon.",
     price: 14.99,
     image_url:
-      "https://images.unsplash.com/photo-1577303935007-0d306ee638cf?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1747461753258-078ac813c952?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-3",
     category_name: "Curries",
     rating: 4.7,
@@ -265,7 +265,7 @@ export const PRODUCTS: Product[] = [
       "Classic naan topped with roasted garlic and fresh coriander. Irresistibly aromatic.",
     price: 5.49,
     image_url:
-      "https://images.unsplash.com/photo-1568600891597-0c23e3cc0c73?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1697155406014-04dc649b0953?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-4",
     category_name: "Breads",
     rating: 4.7,
@@ -283,7 +283,7 @@ export const PRODUCTS: Product[] = [
       "Crispy pastry triangles filled with spiced potatoes and peas. A timeless South Asian snack.",
     price: 7.99,
     image_url:
-      "https://images.unsplash.com/photo-1601050690117-7a1f3e1e35fe?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-5",
     category_name: "Snacks",
     rating: 4.8,
@@ -302,7 +302,7 @@ export const PRODUCTS: Product[] = [
       "Soft milk-solid dumplings soaked in rose-scented sugar syrup. Pure indulgence.",
     price: 8.99,
     image_url:
-      "https://images.unsplash.com/photo-1605197161470-5e43fb0d4b95?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-6",
     category_name: "Sweets",
     rating: 4.9,
@@ -318,7 +318,7 @@ export const PRODUCTS: Product[] = [
       "Creamy rice pudding cooked with whole milk, cardamom, and topped with pistachios and saffron.",
     price: 6.99,
     image_url:
-      "https://images.unsplash.com/photo-1613448856706-2f35e4ff1e89?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604748839931-5b5104964970?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-6",
     category_name: "Sweets",
     rating: 4.6,
@@ -336,7 +336,7 @@ export const PRODUCTS: Product[] = [
       "Thick, creamy blend of fresh Alphonso mangoes and tangy yogurt. Refreshingly sweet.",
     price: 5.99,
     image_url:
-      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1692620609860-be6717812f71?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-7",
     category_name: "Drinks",
     rating: 4.8,

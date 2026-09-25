@@ -46,7 +46,7 @@ export default function ProductCard({ product }: Props) {
   const { addItem } = useCart();
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden group border border-stone-100">
+    <div className="product-card animate-fade-in-up bg-white rounded-2xl overflow-hidden group border border-stone-100">
       {/* Image */}
       <Link href={`/product/${product.id}`} className="block relative h-52 overflow-hidden">
         <Image
@@ -121,7 +121,7 @@ export default function ProductCard({ product }: Props) {
           <button
             onClick={() => addItem(product)}
             disabled={!product.in_stock}
-            className="bg-amber-600 hover:bg-amber-700 disabled:bg-stone-300 text-white text-sm font-semibold px-3 py-1.5 rounded-lg transition-colors active:scale-95"
+            className="btn-cart bg-amber-600 hover:bg-amber-700 disabled:bg-stone-300 text-white text-sm font-semibold px-3 py-1.5 rounded-lg"
           >
             Add
           </button>

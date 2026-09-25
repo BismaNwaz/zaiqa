@@ -137,7 +137,7 @@ async function ProductsGrid({
             </a>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+          <div className="stagger-children grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
             {filtered.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
