@@ -54,7 +54,7 @@ export default function CheckoutPage() {
     if (order) {
       setOrderId(order.id);
 
-      // Save to localStorage so the orders page shows this order
+      // Save order to localStorage so the orders page can display it
       try {
         const storedOrder = {
           id: order.id,
