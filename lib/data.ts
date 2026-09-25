@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
       "Slow-cooked beef dum biryani with caramelized onions, dried plums, and fragrant rice. Rich and indulgent.",
     price: 17.99,
     image_url:
-      "https://images.unsplash.com/photo-1603360946369-dc9bb6258aaf?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-1",
     category_name: "Rice & Biryani",
     rating: 4.8,
