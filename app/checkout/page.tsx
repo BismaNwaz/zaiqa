@@ -53,6 +53,33 @@ export default function CheckoutPage() {
 
     if (order) {
       setOrderId(order.id);
+
+      // Save to localStorage so the orders page shows this order
+      try {
+        const storedOrder = {
+          id: order.id,
+          date: new Date().toISOString(),
+          status: "confirmed" as const,
+          total,
+          customer_name: delivery.name,
+          delivery_address: `${delivery.address}, ${delivery.city} ${delivery.postcode}`,
+          payment_method: payment.method,
+          items: items.map(({ product, quantity }) => ({
+            product: {
+              id: product.id,
+              name: product.name,
+              price: product.price,
+              image_url: product.image_url,
+            },
+            quantity,
+          })),
+        };
+        const existing = JSON.parse(localStorage.getItem("zaiqa-orders") || "[]");
+        localStorage.setItem("zaiqa-orders", JSON.stringify([storedOrder, ...existing]));
+      } catch {
+        // localStorage unavailable — order still completes
+      }
+
       clearCart();
       setStep("success");
     }

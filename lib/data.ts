@@ -61,7 +61,7 @@ export const CATEGORIES: Category[] = [
     slug: "drinks",
     description: "Refreshing lassi, chai, and traditional beverages",
     image_url:
-      "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80&auto=format&fit=crop", // ✅ fixed
     emoji: "🥤",
   },
   {
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
       "Slow-cooked beef dum biryani with caramelized onions, dried plums, and fragrant rice. Rich and indulgent.",
     price: 17.99,
     image_url:
-      "https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1603360946369-dc9bb6258aaf?w=800&q=80&auto=format&fit=crop", // ✅ fixed
     category_id: "cat-1",
     category_name: "Rice & Biryani",
     rating: 4.8,
@@ -120,7 +120,7 @@ export const PRODUCTS: Product[] = [
       "Light and fragrant rice cooked with seasonal vegetables and whole spices. Perfect comfort food.",
     price: 11.99,
     image_url:
-      "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=80&auto=format&fit=crop", // ✅ fixed
     category_id: "cat-1",
     category_name: "Rice & Biryani",
     rating: 4.5,
@@ -265,7 +265,7 @@ export const PRODUCTS: Product[] = [
       "Classic naan topped with roasted garlic and fresh coriander. Irresistibly aromatic.",
     price: 5.49,
     image_url:
-      "https://images.unsplash.com/photo-1574994369525-0a2f5d4c6e8a?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1568600891597-0c23e3cc0c73?w=800&q=80&auto=format&fit=crop", // ✅ fixed
     category_id: "cat-4",
     category_name: "Breads",
     rating: 4.7,
@@ -336,7 +336,7 @@ export const PRODUCTS: Product[] = [
       "Thick, creamy blend of fresh Alphonso mangoes and tangy yogurt. Refreshingly sweet.",
     price: 5.99,
     image_url:
-      "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=800&q=80&auto=format&fit=crop", // ✅ fixed
     category_id: "cat-7",
     category_name: "Drinks",
     rating: 4.8,
