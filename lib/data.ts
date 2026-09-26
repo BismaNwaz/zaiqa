@@ -265,7 +265,7 @@ export const PRODUCTS: Product[] = [
       "Classic naan topped with roasted garlic and fresh coriander. Irresistibly aromatic.",
     price: 5.49,
     image_url:
-      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-4",
     category_name: "Breads",
     rating: 4.7,
@@ -336,7 +336,7 @@ export const PRODUCTS: Product[] = [
       "Thick, creamy blend of fresh Alphonso mangoes and tangy yogurt. Refreshingly sweet.",
     price: 5.99,
     image_url:
-      "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-7",
     category_name: "Drinks",
     rating: 4.8,
