@@ -34,7 +34,7 @@ export const CATEGORIES: Category[] = [
     slug: "breads",
     description: "Freshly baked naan, roti, and paratha",
     image_url:
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574534735373-33a564eb668c?w=600&q=80&auto=format&fit=crop",
     emoji: "🫓",
   },
   {
@@ -43,7 +43,7 @@ export const CATEGORIES: Category[] = [
     slug: "snacks",
     description: "Crispy appetizers and street food favorites",
     image_url:
-      "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574233462399-3d348d5aad91?w=600&q=80&auto=format&fit=crop",
     emoji: "🥟",
   },
   {
@@ -52,7 +52,7 @@ export const CATEGORIES: Category[] = [
     slug: "sweets",
     description: "Traditional mithai and desserts to satisfy your sweet tooth",
     image_url:
-      "https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620838472655-15e4dcbc9d4c?w=600&q=80&auto=format&fit=crop",
     emoji: "🍬",
   },
   {
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
       "Slow-cooked beef dum biryani with caramelized onions, dried plums, and fragrant rice. Rich and indulgent.",
     price: 17.99,
     image_url:
-      "https://images.unsplash.com/photo-1603360946369-dc9bb6258aaf?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-1",
     category_name: "Rice & Biryani",
     rating: 4.8,
@@ -120,7 +120,7 @@ export const PRODUCTS: Product[] = [
       "Light and fragrant rice cooked with seasonal vegetables and whole spices. Perfect comfort food.",
     price: 11.99,
     image_url:
-      "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-1",
     category_name: "Rice & Biryani",
     rating: 4.5,
@@ -249,7 +249,7 @@ export const PRODUCTS: Product[] = [
       "Soft, pillowy naan brushed with butter and baked in a tandoor. The perfect accompaniment to any curry.",
     price: 4.99,
     image_url:
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574534735373-33a564eb668c?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-4",
     category_name: "Breads",
     rating: 4.6,
@@ -265,7 +265,7 @@ export const PRODUCTS: Product[] = [
       "Classic naan topped with roasted garlic and fresh coriander. Irresistibly aromatic.",
     price: 5.49,
     image_url:
-      "https://images.unsplash.com/photo-1697155406014-04dc649b0953?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-4",
     category_name: "Breads",
     rating: 4.7,
@@ -283,7 +283,7 @@ export const PRODUCTS: Product[] = [
       "Crispy pastry triangles filled with spiced potatoes and peas. A timeless South Asian snack.",
     price: 7.99,
     image_url:
-      "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574233462399-3d348d5aad91?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-5",
     category_name: "Snacks",
     rating: 4.8,
@@ -302,7 +302,7 @@ export const PRODUCTS: Product[] = [
       "Soft milk-solid dumplings soaked in rose-scented sugar syrup. Pure indulgence.",
     price: 8.99,
     image_url:
-      "https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620838472655-15e4dcbc9d4c?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-6",
     category_name: "Sweets",
     rating: 4.9,
@@ -318,7 +318,7 @@ export const PRODUCTS: Product[] = [
       "Creamy rice pudding cooked with whole milk, cardamom, and topped with pistachios and saffron.",
     price: 6.99,
     image_url:
-      "https://images.unsplash.com/photo-1604748839931-5b5104964970?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-6",
     category_name: "Sweets",
     rating: 4.6,
@@ -336,7 +336,7 @@ export const PRODUCTS: Product[] = [
       "Thick, creamy blend of fresh Alphonso mangoes and tangy yogurt. Refreshingly sweet.",
     price: 5.99,
     image_url:
-      "https://images.unsplash.com/photo-1692620609860-be6717812f71?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&q=80&auto=format&fit=crop",
     category_id: "cat-7",
     category_name: "Drinks",
     rating: 4.8,
