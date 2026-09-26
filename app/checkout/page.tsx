@@ -11,34 +11,10 @@ const FREE_DELIVERY_THRESHOLD = 35;
 
 type Step = "delivery" | "payment" | "review" | "success";
 
-function isValidCardPayment(cardNumber: string, expiry: string, cvv: string) {
-  const digits = cardNumber.replace(/\D/g, "");
-  const expiryParts = expiry.split("/");
-  const month = Number(expiryParts[0]);
-  const year = Number(expiryParts[1]);
-  const now = new Date();
-  const currentYear = now.getFullYear() % 100;
-  const currentMonth = now.getMonth() + 1;
-
-  return (
-    digits.length >= 13 &&
-    digits.length <= 19 &&
-    expiryParts.length === 2 &&
-    /^\d{2}$/.test(expiryParts[0]) &&
-    /^\d{2}$/.test(expiryParts[1]) &&
-    month >= 1 &&
-    month <= 12 &&
-    (year > currentYear || (year === currentYear && month >= currentMonth)) &&
-    /^\d{3,4}$/.test(cvv)
-  );
-}
-
 export default function CheckoutPage() {
   const { items, subtotal, clearCart } = useCart();
   const [step, setStep] = useState<Step>("delivery");
   const [orderId, setOrderId] = useState<string | null>(null);
-  const [isPlacingOrder, setIsPlacingOrder] = useState(false);
-  const [orderError, setOrderError] = useState<string | null>(null);
 
   const [delivery, setDelivery] = useState({
     name: "",
@@ -59,40 +35,23 @@ export default function CheckoutPage() {
 
   const deliveryFee = subtotal >= FREE_DELIVERY_THRESHOLD ? 0 : DELIVERY_FEE;
   const total = subtotal + deliveryFee;
-  const deliveryIsValid = Boolean(
-    delivery.name.trim() &&
-      delivery.email.trim() &&
-      delivery.phone.trim() &&
-      delivery.address.trim() &&
-      delivery.city.trim() &&
-      delivery.postcode.trim() &&
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(delivery.email)
-  );
-  const paymentIsValid =
-    payment.method === "cash" ||
-    isValidCardPayment(payment.cardNumber, payment.expiry, payment.cvv);
 
   async function placeOrder() {
-    if (isPlacingOrder || !deliveryIsValid || !paymentIsValid) return;
+    const order = await createOrder({
+      customer_name: delivery.name,
+      customer_email: delivery.email,
+      customer_phone: delivery.phone,
+      delivery_address: `${delivery.address}, ${delivery.city} ${delivery.postcode}`,
+      items,
+      subtotal,
+      delivery_fee: deliveryFee,
+      total,
+      status: "confirmed",
+      payment_method: payment.method,
+      notes: delivery.notes,
+    });
 
-    setIsPlacingOrder(true);
-    setOrderError(null);
-
-    try {
-      const order = await createOrder({
-        customer_name: delivery.name,
-        customer_email: delivery.email,
-        customer_phone: delivery.phone,
-        delivery_address: `${delivery.address}, ${delivery.city} ${delivery.postcode}`,
-        items,
-        subtotal,
-        delivery_fee: deliveryFee,
-        total,
-        status: "confirmed",
-        payment_method: payment.method,
-        notes: delivery.notes,
-      });
-
+    if (order) {
       setOrderId(order.id);
 
       // Save order to localStorage so the orders page can display it
@@ -115,8 +74,7 @@ export default function CheckoutPage() {
             quantity,
           })),
         };
-        const parsed = JSON.parse(localStorage.getItem("zaiqa-orders") || "[]");
-        const existing = Array.isArray(parsed) ? parsed : [];
+        const existing = JSON.parse(localStorage.getItem("zaiqa-orders") || "[]");
         localStorage.setItem("zaiqa-orders", JSON.stringify([storedOrder, ...existing]));
       } catch {
         // localStorage unavailable — order still completes
@@ -124,10 +82,6 @@ export default function CheckoutPage() {
 
       clearCart();
       setStep("success");
-    } catch {
-      setOrderError("We couldn’t place your order. Please try again.");
-    } finally {
-      setIsPlacingOrder(false);
     }
   }
 
@@ -248,7 +202,7 @@ export default function CheckoutPage() {
                   { key: "email", label: "Email Address", type: "email", placeholder: "fatima@example.com", col: 1 },
                   { key: "phone", label: "Phone Number", type: "tel", placeholder: "+44 7911 123456", col: 1 },
                   { key: "address", label: "Delivery Address", type: "text", placeholder: "123 Green Lane, Flat 2", col: 2 },
-                  { key: "city", label: "City", type: "text", placeholder: "London", col: 1 },
+                  { key: "city", label: "City", type: "text", placeholder: "New York", col: 1 },
                   { key: "postcode", label: "Postcode", type: "text", placeholder: "E1 6RF", col: 1 },
                 ].map(({ key, label, type, placeholder, col }) => (
                   <div key={key} className={col === 2 ? "sm:col-span-2" : ""}>
@@ -283,7 +237,7 @@ export default function CheckoutPage() {
               </div>
               <button
                 onClick={() => setStep("payment")}
-                disabled={!deliveryIsValid}
+                disabled={!delivery.name || !delivery.email || !delivery.address}
                 className="mt-5 w-full bg-amber-600 hover:bg-amber-700 disabled:bg-stone-300 text-white font-bold py-3 rounded-full transition-colors"
               >
                 Continue to Payment →
@@ -405,8 +359,7 @@ export default function CheckoutPage() {
                 </button>
                 <button
                   onClick={() => setStep("review")}
-                  disabled={!paymentIsValid}
-                  className="flex-2 flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-stone-300 text-white font-bold py-3 rounded-full transition-colors"
+                  className="flex-2 flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-full transition-colors"
                 >
                   Review Order →
                 </button>
@@ -470,17 +423,11 @@ export default function CheckoutPage() {
                 </button>
                 <button
                   onClick={placeOrder}
-                  disabled={isPlacingOrder}
-                  className="flex-1 bg-green-700 hover:bg-green-800 disabled:bg-stone-300 text-white font-bold py-3 rounded-full transition-colors"
+                  className="flex-1 bg-green-700 hover:bg-green-800 text-white font-bold py-3 rounded-full transition-colors"
                 >
-                  {isPlacingOrder ? "Placing Order..." : `✓ Place Order · $${total.toFixed(2)}`}
+                  ✓ Place Order · ${total.toFixed(2)}
                 </button>
               </div>
-              {orderError && (
-                <p className="mt-3 text-sm text-red-600" role="alert">
-                  {orderError}
-                </p>
-              )}
             </div>
           )}
         </div>
